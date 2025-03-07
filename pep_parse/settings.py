@@ -1,6 +1,5 @@
 import asyncio
 from asyncio import WindowsSelectorEventLoopPolicy
-from pathlib import Path
 
 asyncio.set_event_loop_policy(WindowsSelectorEventLoopPolicy())
 BOT_NAME = 'pep_parse'
@@ -23,7 +22,3 @@ FEEDS = {
 ITEM_PIPELINES = {
     'pep_parse.pipelines.PepParsePipeline': 300,
 }
-
-BASE_DIR = Path(__file__).parent.parent
-RESULTS_DIR = BASE_DIR / 'results'
-DATETIME_FORMAT = '%Y-%m-%d_%H-%M-%S'

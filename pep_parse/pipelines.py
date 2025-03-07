@@ -1,8 +1,11 @@
 from collections import defaultdict
 import csv
 import datetime as dt
+from pathlib import Path
 
-from .settings import RESULTS_DIR, DATETIME_FORMAT
+BASE_DIR = Path(__file__).parent.parent
+RESULTS_DIR = BASE_DIR / 'results'
+DATETIME_FORMAT = '%Y-%m-%d_%H-%M-%S'
 
 
 class PepParsePipeline:
