@@ -2,7 +2,7 @@ from collections import defaultdict
 import csv
 import datetime as dt
 
-from pep_parse.settings import RESULTS_DIR, DATETIME_FORMAT
+from .settings import RESULTS_DIR, DATETIME_FORMAT
 
 
 class PepParsePipeline:
