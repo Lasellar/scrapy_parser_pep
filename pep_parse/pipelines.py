@@ -3,8 +3,7 @@ import csv
 import datetime as dt
 from pathlib import Path
 
-BASE_DIR = Path(__file__).parent.parent
-RESULTS_DIR = BASE_DIR / 'results'
+BASE_DIR = Path(__file__).resolve().parent.parent
 DATETIME_FORMAT = '%Y-%m-%d_%H-%M-%S'
 
 
@@ -19,6 +18,7 @@ class PepParsePipeline:
         return item
 
     def close_spider(self, spider):
+        RESULTS_DIR = BASE_DIR / 'results'
         summary = [('Статус', 'Количество')]
         summary.extend(self.statuses.items())
         summary.append(('total', sum(self.statuses.values())))
