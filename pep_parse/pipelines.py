@@ -12,9 +12,10 @@ class PepParsePipeline:
         self.statuses = defaultdict(int)
 
     def process_item(self, item, spider):
+        if not item.get('status'):
+            spider.logger.error('PEP %s has no status', item['number'])
+            return item
         self.statuses[item['status']] += 1
-        if not item['status']:
-            raise KeyError
         return item
 
     def close_spider(self, spider):
