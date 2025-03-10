@@ -6,6 +6,7 @@ class PepSpider(Spider):
     name = 'pep'
     allowed_domains = ['peps.python.org']
     start_urls = ['https://peps.python.org/']
+    custom_settings = {'FEEDS': None}
 
     def parse(self, response):
         for pep_link in response.css('tbody tr a[href^="pep-"]'):
