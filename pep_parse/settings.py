@@ -1,3 +1,5 @@
+from pathlib import Path
+
 BOT_NAME = 'pep_parse'
 
 SPIDER_MODULES = ['pep_parse.spiders']
@@ -5,6 +7,9 @@ NEWSPIDER_MODULE = 'pep_parse.spiders'
 
 ROBOTSTXT_OBEY = True
 FEED_EXPORT_ENCODING = "utf-8"
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATETIME_FORMAT = '%Y-%m-%dT%H-%M-%S'
 
 FEEDS = {
     'results/pep_%(time)s.csv': {

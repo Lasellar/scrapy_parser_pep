@@ -1,11 +1,9 @@
 from collections import defaultdict
 import csv
 from datetime import datetime as dt
-from pathlib import Path
 from scrapy.exporters import CsvItemExporter
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DATETIME_FORMAT = '%Y-%m-%dT%H-%M-%S'
+from .settings import BASE_DIR, DATETIME_FORMAT
 
 
 class PepParsePipeline:
